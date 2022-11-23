@@ -21,18 +21,18 @@ namespace ManagementSystem.Controllers
 
 
         [HttpGet]
-        public  async Task<ActionResult<IEnumerable<CoWorkers>>> GetUsers()
+        public  async Task<ActionResult<IEnumerable<Appuser>>> GetUsers()
         {
-            var users = await _context.CoWorkers.ToListAsync();
+            var users = await _context.Users.ToListAsync();
 
             return users;
         }
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<CoWorkers>> GetUser(int id)
+        public async Task<ActionResult<Appuser>> GetUser(int id)
         {
-            return await _context.CoWorkers.FindAsync(id);
+            return await _context.Users.FindAsync(id);
         }
 
 

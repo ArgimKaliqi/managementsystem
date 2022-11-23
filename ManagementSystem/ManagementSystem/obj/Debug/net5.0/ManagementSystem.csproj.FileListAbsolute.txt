@@ -25,7 +25,6 @@ C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\Managem
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.OpenApi.dll
-C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\SQLitePCLRaw.nativelibrary.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\SQLitePCLRaw.core.dll
@@ -78,3 +77,5 @@ C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\Managem
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.IdentityModel.Abstractions.dll

@@ -5,10 +5,15 @@ using System.Threading.Tasks;
 
 namespace ManagementSystem.Entities
 {
-    public class CoWorkers
+    public class Appuser
     {
         public int Id { get; set; }
-        public string Username { get; set; }
+        public string UserName { get; set; }
+
+        public byte[] PasswordHash { get; set; }
+
+        public byte[] PasswordSalt { get; set; }
+       
 
     }
 }

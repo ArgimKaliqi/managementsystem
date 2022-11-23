@@ -9,6 +9,6 @@ namespace ManagementSystem.Data
         {
         }
 
-        public DbSet<CoWorkers> CoWorkers { get; set; }
+        public DbSet<Appuser> Users { get; set; }
     }
 }
