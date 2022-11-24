@@ -104,7 +104,7 @@ function Navbar() {
                     </li>
 
                 </ul>
-                <Button />
+                <Button className='butoni'/>
             </nav>
 
         </>

@@ -1,12 +1,15 @@
-import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
+import LoginForm from './pages/Login/Login';
 
 function App() {
   return (
-  <Router>
-    <Navbar />
-  </Router>
+    <>
+      <Routes>
+        <Route path='/' element={<LoginForm />} />
+        <Route path='/clients' element={<Navbar />} />
+        </Routes>    
+  </>
   );
 }
 
