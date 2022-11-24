@@ -17,6 +17,7 @@ function Navbar() {
     
     const handleClick = () => setClick(!click)
     const closeMobileMenu = () => setClick(false)
+    
     const extendElement = () =>{
 
         dropdown ? setDropdown(false) : setDropdown(true);
@@ -83,9 +84,9 @@ function Navbar() {
                     <li className='nav-item'
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
-                        onClick={extendElement}
+                        onClick={extendElement} 
                     >
-                        <Link to='/reports' className='nav-links'>
+                        <Link className='nav-links' to='/reports'>
                             Reports <i className='fas fa-caret-down' /> <TbReportAnalytics />
                         </Link>
                         
