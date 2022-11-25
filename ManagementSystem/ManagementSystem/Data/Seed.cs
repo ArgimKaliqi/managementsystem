@@ -15,11 +15,11 @@ namespace ManagementSystem.Data
         {
             if (await userManager.Users.AnyAsync()) return;
 
-            var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
+            //var userData = await File.ReadAllTextAsync("Data/UserSeedData.json");
 
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-            var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
+            //var users = JsonSerializer.Deserialize<List<AppUser>>(userData);
 
             var roles = new List<AppRole>
             {
@@ -33,12 +33,12 @@ namespace ManagementSystem.Data
                 await roleManager.CreateAsync(role);
             }
 
-            foreach (var user in users)
-            {
-                user.UserName = user.UserName.ToLower();
-                await userManager.CreateAsync(user, "Pa$$w0rd");
-                await userManager.AddToRoleAsync(user, "Member");
-            }
+            //foreach (var user in users)
+            //{
+            //    user.UserName = user.UserName.ToLower();
+            //    await userManager.CreateAsync(user, "Pa$$w0rd");
+            //    await userManager.AddToRoleAsync(user, "Member");
+            //}
 
             var admin = new AppUser
             {

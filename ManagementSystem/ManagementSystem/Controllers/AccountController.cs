@@ -2,13 +2,10 @@
 using App1.DTOs;
 using App1.Interfaces;
 using ManagementSystem.Controllers;
-using ManagementSystem.Data;
 using ManagementSystem.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace App1.Controllers
@@ -17,7 +14,6 @@ namespace App1.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly ITokenService _tokenService;
-        private readonly RoleManager<AppRole> _roleManager;
 
         public AccountController(UserManager<AppUser> userManager, ITokenService tokenService)
         {

@@ -25,7 +25,7 @@ namespace ManagementSystem
                 var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
                 //Automatically picksup changes in migrations once the app restarts etc.
                 await context.Database.MigrateAsync();
-                //await seed.seedusers(usermanager, rolemanager);
+                await Seed.SeedUsers(userManager, roleManager);
 
             }
             catch (Exception ex)
