@@ -161,3 +161,6 @@ C:\Users\Dalma\Desktop\Management System\managementsystem\ManagementSystem\Manag
 C:\Users\Dalma\Desktop\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 C:\Users\Dalma\Desktop\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
 C:\Users\Dalma\Desktop\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Data\UserSeedData.json
