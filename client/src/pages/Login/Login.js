@@ -11,14 +11,14 @@ const LoginForm = () => {
         <div className="login">
           <div className="col-1">
            <i><BiUserCircle /></i>
-            <h2>Welcome</h2>
-            <span>Login to countinue</span>
+            <h2>Willkommen</h2>
+            <span>Melde dich in deinem Konto an</span>
 
             <form id="form" className="flex flex-col">
               <input type="text" placeholder="Email"></input>
               <input type="text" placeholder="Password"></input>
 
-              <button className="btn">Login</button>
+              <button className="btn">Einloggen</button>
             </form>
           </div>
         </div>
