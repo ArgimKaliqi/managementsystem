@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dalma\\Desktop\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
+    "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dalma\\Desktop\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
+    "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dalma\\Desktop\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "projectName": "ManagementSystem",
-        "projectPath": "C:\\Users\\Dalma\\Desktop\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectPath": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "packagesPath": "C:\\Users\\Dalma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dalma\\Desktop\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
+        "outputPath": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dalma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.0, )"
             },
