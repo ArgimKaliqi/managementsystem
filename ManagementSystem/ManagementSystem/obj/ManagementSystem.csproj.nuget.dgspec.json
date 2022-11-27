@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
+    "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
+    "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "projectName": "ManagementSystem",
-        "projectPath": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\Eltonio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
+        "projectPath": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Dalma\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Eltonio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dalma\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +91,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -102,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
