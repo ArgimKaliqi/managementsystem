@@ -56,6 +56,7 @@ namespace ManagementSystem.Controllers
             if (result) return Ok();
             return BadRequest(new ProblemDetails { Title = "Problem deleting the data" });
         }
+        
         [HttpPost]
         public async Task<ActionResult<Client>> CreateClient([FromForm] ClientDTO clientDTO)
         {

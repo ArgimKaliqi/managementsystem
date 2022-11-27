@@ -23,6 +23,8 @@ namespace ManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             services.AddApplicationServices(_config);
             services.AddControllers();
             services.AddCors();
