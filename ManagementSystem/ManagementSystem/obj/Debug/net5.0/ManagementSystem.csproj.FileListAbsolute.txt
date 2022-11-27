@@ -243,3 +243,8 @@ C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\obj\
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.pdb
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ManagementSystem.genruntimeconfig.cache
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\ref\ManagementSystem.dll
+C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
