@@ -24,7 +24,7 @@ namespace ManagementSystem.DTOs
         public string Disease { get; set; }
         public int? WorkerId { get; set; }
         public int? AdvocateId { get; set; }
-        public virtual Worker Worker { get; set; }
-        public virtual Advocate Advocate { get; set; }
+        // public virtual Worker Worker { get; set; }
+        // public virtual Advocate Advocate { get; set; }
     }
 }
