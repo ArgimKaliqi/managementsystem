@@ -64,7 +64,7 @@ namespace ManagementSystem.Controllers
             var client = _mapper.Map<Client>(clientDTO);
             _context.Clients.Add(client);
             var result = await _context.SaveChangesAsync() > 0;
-            if (result) return CreatedAtRoute("GetClients", new { Id = client.ClientsId }, client);
+            if (result) return CreatedAtRoute("GetClients", new { Id = client.ClientId }, client);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
         }
     }
