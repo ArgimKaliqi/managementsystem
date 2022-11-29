@@ -1,16 +1,13 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettingsOutlined";
-import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
-import SecurityOutlinedIcon from '@mui/icons-material/SecurityOutlined';
 import Button from '@mui/material/Button';
 import Header from "../../components/Header";
 import axios from 'axios'
 import { useEffect, useState } from "react";
 import { getClients } from "../../util/fetch";
 
-
+// Clients data untill advocates controller gets finished
 
 const Clients = () => {
   const theme = useTheme();
@@ -39,19 +36,17 @@ const Clients = () => {
 
 
   const columns = [
-    { field: 'clientId', headerName: "ID"},
+    { field: 'advocateId', headerName: "ID"},
     { field: 'name', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
     { field: 'surname', headerName: "Surname",},
     { field: 'address', headerName: "Address", flex: 1},
     { field: 'email', headerName: "Email", flex: 1},
-    { field: 'advocateid', headerName: "Advocate", flex: 1},
-    
 ];
 
   return (
     <Box m="20px">
-      <Header title="Clients" subtitle="Add, Edit, Delete clients" />
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Client</Button>
+      <Header title="Advocates" subtitle="Add, Edit, Delete advocates" />
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Advocate</Button>
       <Box
       m="40px 0 0 0"
       height="65vh"
