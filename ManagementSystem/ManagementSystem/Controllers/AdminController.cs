@@ -39,6 +39,7 @@ namespace ManagementSystem.Controllers
         [Authorize(Policy = "RequireAdminRole")]
         [HttpPost("edit-roles/{username}")]
 
+        //Test
         public async Task <ActionResult> EditRoles(string username, [FromQuery]string roles)
         {
             if (string.IsNullOrEmpty(roles)) return BadRequest("You must select at least one role");
