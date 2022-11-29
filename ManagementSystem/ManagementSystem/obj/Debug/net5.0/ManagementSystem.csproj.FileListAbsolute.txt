@@ -248,3 +248,11 @@ C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
 C:\Users\Eltonio\Desktop\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Data\UserSeedData.json
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Argim Kaliqi\Documents\GitHub\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

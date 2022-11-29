@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
+    "C:\\Users\\Argim Kaliqi\\Documents\\GitHub\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
+    "C:\\Users\\Argim Kaliqi\\Documents\\GitHub\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Argim Kaliqi\\Documents\\GitHub\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
         "projectName": "ManagementSystem",
-        "projectPath": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
-        "packagesPath": "C:\\Users\\Eltonio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Eltonio\\Desktop\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
+        "projectPath": "C:\\Users\\Argim Kaliqi\\Documents\\GitHub\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
+        "packagesPath": "C:\\Users\\Argim Kaliqi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Argim Kaliqi\\Documents\\GitHub\\managementsystem\\ManagementSystem\\ManagementSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Eltonio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Argim Kaliqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -48,6 +49,10 @@
               "version": "[12.0.0, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.0, )"
             },
@@ -102,7 +107,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }
     }
