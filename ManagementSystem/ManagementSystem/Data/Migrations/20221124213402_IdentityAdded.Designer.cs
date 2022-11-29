@@ -3,14 +3,16 @@ using System;
 using ManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ManagementSystem.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221124213402_IdentityAdded")]
+    partial class IdentityAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18,84 +20,28 @@ namespace ManagementSystem.Data.Migrations
 
             modelBuilder.Entity("ManagementSystem.Entities.Advocate", b =>
                 {
-                    b.Property<int>("AdvocateId")
+                    b.Property<int>("AdvocatesId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("AdvocatesAddress")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AdvocatesCity")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AdvocatesName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<long?>("AdministrativeTax")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("AdvocatesPhoneNumber")
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Bank")
+                    b.Property<string>("AdvocatesSurname")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CivilStatus")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DoorNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Gender")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("HouseNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IBAN")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool?>("IsDisabled")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Postal")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<long?>("Salary")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("StairsNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SwiftCode")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("AdvocateId");
+                    b.HasKey("AdvocatesId");
 
                     b.ToTable("Advocates");
                 });
@@ -161,8 +107,11 @@ namespace ManagementSystem.Data.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("TEXT");
@@ -209,75 +158,43 @@ namespace ManagementSystem.Data.Migrations
 
             modelBuilder.Entity("ManagementSystem.Entities.Client", b =>
                 {
-                    b.Property<int>("ClientId")
+                    b.Property<int>("ClientsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<int?>("AdvocateId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Bank")
+                    b.Property<string>("ClientsAddres")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClientsCity")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClientsName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("City")
-                        .IsRequired()
+                    b.Property<string>("ClientsPhoneNumber")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("CivilStatus")
+                    b.Property<string>("ClientsSurname")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Disease")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("DoorNumber")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("Gender")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("HouseNumber")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("IBAN")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Postal")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("StairsNumber")
+                    b.Property<int>("StairNumber")
                         .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Surname")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SwiftCode")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<int?>("WorkerId")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ClientId");
+                    b.HasKey("ClientsId");
 
                     b.HasIndex("AdvocateId");
 
@@ -292,69 +209,23 @@ namespace ManagementSystem.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("WorkersAddress")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WorkersCity")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WorkersEmail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WorkersName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Bank")
-                        .IsRequired()
+                    b.Property<string>("WorkersPhoneNumber")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CivilStatus")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("DoorNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<bool>("Gender")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("HouseNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("IBAN")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Postal")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<long>("Salary")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("StairsNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("SwiftCode")
+                    b.Property<string>("WorkersSurnname")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
