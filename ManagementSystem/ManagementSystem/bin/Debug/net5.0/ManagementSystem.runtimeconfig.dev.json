@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Eltonio\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Eltonio\\.nuget\\packages"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 using App1.Extensions;
+using ManagementSystem.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,8 @@ namespace ManagementSystem
         public void ConfigureServices(IServiceCollection services)
         {
 
+
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
             services.AddApplicationServices(_config);
             services.AddControllers();
             services.AddCors();
@@ -50,7 +53,7 @@ namespace ManagementSystem
 
             app.UseRouting();
 
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:3000"));
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:3000"));
 
             app.UseAuthentication();
 
