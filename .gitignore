@@ -1,0 +1,10 @@
+
+*.v2
+ManagementSystem/.vs/ManagementSystem/v16/.suo
+ManagementSystem/ManagementSystem/obj/Debug/net5.0/ManagementSystem.assets.cache
+*.cache
+*.editorconfig
+*.json
+*.v2
+ManagementSystem/.vs/ManagementSystem/DesignTimeBuild/.dtbcache.v2
+ManagementSystem/.vs/ManagementSystem/v16/.suo
