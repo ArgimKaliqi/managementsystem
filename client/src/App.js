@@ -8,7 +8,7 @@ import Sidebar from './pages/Dashboard/global/Sidebar'
 import Dashboard from './pages/Dashboard'
 // import Tasks from './pages/tasks'
 import Clients from './pages/clients'
-// import Advocate from './pages/advocates'
+import Advocate from './pages/advocates'
 // import Coworkers from './pages/coworkers'
 // import Companies from './pages/companies'
 // import Reports from './pages/reports'
@@ -41,7 +41,7 @@ function App() {
           
           {/* <Route path='/tasks' element={<Tasks />} /> */}
           <Route path='clients' element={<Clients/>} />
-          {/* <Route path='/advocate' element={<Advocate />} /> */}
+           <Route path='/advocate' element={<Advocate />} /> 
           {/* <Route path='/coworkers' element={<Coworkers/>} /> */}
           {/* <Route path='/companies' element={<Companies/>} /> */}
           {/* <Route path='/reports' element={<Reports/>} /> */}
