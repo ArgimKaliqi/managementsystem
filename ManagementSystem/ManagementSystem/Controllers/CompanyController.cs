@@ -70,7 +70,7 @@ namespace ManagementSystem.Controllers
             var company = _mapper.Map<Company>(companyDTO);
             _context.Companies.Add(company);
             var result = await _context.SaveChangesAsync() > 0;
-            if (result) return CreatedAtRoute("GetCompanies", new { Id = company.Id }, company);
+            if (result) return CreatedAtRoute("GetCompanies", new { Id = company.CompanyId }, company);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
         }
     }

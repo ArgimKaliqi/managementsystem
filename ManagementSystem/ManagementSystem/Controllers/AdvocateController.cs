@@ -70,7 +70,7 @@ namespace ManagementSystem.Controllers
             var advocate = _mapper.Map<Advocate>(advocateDTO);
             _context.Advocates.Add(advocate);
             var result = await _context.SaveChangesAsync() > 0;
-            if (result) return CreatedAtRoute("GetAdvocates", new { Id = advocate.Id }, advocate);
+            if (result) return CreatedAtRoute("GetAdvocates", new { Id = advocate.AdvocateId }, advocate);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
         }
     }
