@@ -7,3 +7,8 @@ const api = axios.create({
 export function getClients() {
     return api.get('/client')
 }
+
+
+export function registerClient(client) {
+    return  api.post('/client')
+}
