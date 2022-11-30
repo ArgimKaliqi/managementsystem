@@ -7,7 +7,7 @@ namespace ManagementSystem.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int AdvocateId { get; set; }
 
        
         public string Name { get; set; }
