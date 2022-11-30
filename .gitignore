@@ -422,3 +422,17 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+*.dll
+*.pdb
+*.dll
+*.cache
+*.cache
+*.user
+*.db
+*.cs
+*.cs
+*.dll
+*.pdb
+*.dll
+ManagementSystem/.vs/ManagementSystem/v16/.suo
+*.v2

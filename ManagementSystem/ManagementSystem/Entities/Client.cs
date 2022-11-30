@@ -10,6 +10,7 @@ namespace ManagementSystem.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClientId { get; set; }
+
         [Required(ErrorMessage = "Name ist erforderlich")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Nachname ist erforderlich")]
@@ -21,6 +22,7 @@ namespace ManagementSystem.Entities
         [Required(ErrorMessage = "Stadt ist erforderlich")]
         public string City { get; set; }
         [Required(ErrorMessage = "Adresse ist erforderlich")]
+
         public string Address { get; set; }
         [Required(ErrorMessage = "Hausnummer ist erforderlich")]
         public int HouseNumber { get; set; }

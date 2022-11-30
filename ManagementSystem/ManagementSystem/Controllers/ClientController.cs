@@ -18,6 +18,7 @@ namespace ManagementSystem.Controllers
             _context = context;
             _mapper = mapper;
         }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Client>>> GetClients()
         {
@@ -33,6 +34,7 @@ namespace ManagementSystem.Controllers
             }
             return client;
         }
+
         [HttpPut]
         public async Task<ActionResult<Client>> UpdateClient([FromForm] ClientDTO clientDTO)
         {
@@ -43,6 +45,8 @@ namespace ManagementSystem.Controllers
             if (result) return Ok(client);
             return BadRequest(new ProblemDetails { Title = "Problem updating the data" });
         }
+
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteClient(int id)
         {

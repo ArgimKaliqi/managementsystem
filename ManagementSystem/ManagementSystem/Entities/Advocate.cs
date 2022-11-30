@@ -49,6 +49,7 @@ namespace ManagementSystem.Entities
         [Required(ErrorMessage = "Bic ist erforderlich")]
         public string SwiftCode { get; set; }
 
+        public string Department { get; set; }
         public long? Salary { get; set; }
         public long? AdministrativeTax { get; set; }
         public bool? IsDisabled { get; set; }

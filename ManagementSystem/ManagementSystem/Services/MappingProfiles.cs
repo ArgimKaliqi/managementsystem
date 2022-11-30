@@ -10,6 +10,8 @@ namespace ManagementSystem.Services
         {
             CreateMap<ClientDTO, Client>();
             CreateMap<WorkerDTO, Worker>();
+            CreateMap<AdvocateDTO, Advocate>();
+            CreateMap<CompanyDTO, Company>();
         }
     }
 }

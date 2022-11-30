@@ -16,6 +16,9 @@ namespace ManagementSystem.Data
         public DbSet<Client> Clients { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Advocate> Advocates { get; set; }
+        public DbSet<Company> Companies { get; set; }
+
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)
