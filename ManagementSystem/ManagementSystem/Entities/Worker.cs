@@ -7,7 +7,7 @@ namespace ManagementSystem.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int WorkerId { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "Name ist erforderlich")]
         public string Name { get; set; }
 

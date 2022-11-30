@@ -5,13 +5,25 @@ namespace ManagementSystem.DTOs
 {
     public class ClientDTO
     {
+        [Required]
         public int ClientId { get; set; }
+
+        [Required]
         public string Name { get; set; }
+
+        [Required]
         public string Surname { get; set; }
+
         public bool Gender { get; set; }
+
         public string CivilStatus { get; set; }
+        
+        [Required]
         public string City { get; set; }
+
+        [Required]
         public string Address { get; set; }
+
         public int HouseNumber { get; set; }
         public int DoorNumber { get; set; }
         public int StairsNumber { get; set; }

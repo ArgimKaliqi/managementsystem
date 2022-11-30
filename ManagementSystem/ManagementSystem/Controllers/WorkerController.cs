@@ -65,7 +65,7 @@ namespace ManagementSystem.Controllers
             var worker = _mapper.Map<Worker>(workerDTO);
             _context.Workers.Add(worker);
             var result = await _context.SaveChangesAsync() > 0;
-            if (result) return CreatedAtRoute("GetWorkers", new { Id = worker.WorkerId }, worker);
+            if (result) return CreatedAtRoute("GetWorkers", new { Id = worker.Id }, worker);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
         }
     }
