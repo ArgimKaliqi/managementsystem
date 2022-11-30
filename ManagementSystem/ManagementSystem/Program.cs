@@ -1,5 +1,7 @@
 using ManagementSystem.Data;
+using ManagementSystem.Entities;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -19,9 +21,12 @@ namespace ManagementSystem
             try
             {
                 var context = services.GetRequiredService<DataContext>();
+                var userManager = services.GetRequiredService<UserManager<AppUser>>();
+                var roleManager = services.GetRequiredService<RoleManager<AppRole>>();
                 //Automatically picksup changes in migrations once the app restarts etc.
                 await context.Database.MigrateAsync();
- 
+                await Seed.SeedUsers(userManager, roleManager);
+
             }
             catch (Exception ex)
             {

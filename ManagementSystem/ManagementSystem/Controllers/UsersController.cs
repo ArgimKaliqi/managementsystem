@@ -19,9 +19,11 @@ namespace ManagementSystem.Controllers
             _context = context;
         }
 
+        // If we want an admin to acces a method 
+        //[Authorize(AppRole= "Admin")]
 
         [HttpGet]
-        public  async Task<ActionResult<IEnumerable<Appuser>>> GetUsers()
+        public  async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
         {
             var users = await _context.Users.ToListAsync();
 
@@ -30,7 +32,7 @@ namespace ManagementSystem.Controllers
 
         [HttpGet("{id}")]
 
-        public async Task<ActionResult<Appuser>> GetUser(int id)
+        public async Task<ActionResult<AppUser>> GetUser(int id)
         {
             return await _context.Users.FindAsync(id);
         }
