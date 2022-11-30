@@ -8,6 +8,7 @@ import Sidebar from './pages/Dashboard/global/Sidebar'
 import Dashboard from './pages/Dashboard'
 // import Tasks from './pages/tasks'
 import Clients from './pages/clients'
+import Form from './pages/clients/clientForm'
 import Advocate from './pages/advocates'
 // import Coworkers from './pages/coworkers'
 // import Companies from './pages/companies'
@@ -42,6 +43,7 @@ function App() {
           {/* <Route path='/tasks' element={<Tasks />} /> */}
           <Route path='clients' element={<Clients/>} />
            <Route path='/advocate' element={<Advocate />} /> 
+           <Route path='/clientForm' element={<Form />} /> 
           {/* <Route path='/coworkers' element={<Coworkers/>} /> */}
           {/* <Route path='/companies' element={<Companies/>} /> */}
           {/* <Route path='/reports' element={<Reports/>} /> */}
