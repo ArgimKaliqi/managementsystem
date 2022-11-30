@@ -429,8 +429,6 @@ FodyWeavers.xsd
 *.cache
 *.user
 *.db
-*.cs
-*.cs
 *.dll
 *.pdb
 *.dll
