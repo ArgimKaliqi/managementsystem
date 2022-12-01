@@ -4,7 +4,6 @@ namespace ManagementSystem.DTOs
 {
     public class WorkerDTO
     {
-        public int WorkerId { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
