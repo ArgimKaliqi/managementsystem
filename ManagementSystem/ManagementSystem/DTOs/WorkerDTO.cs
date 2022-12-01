@@ -6,8 +6,6 @@ namespace ManagementSystem.DTOs
     {
 
         [Required]
-        public int WorkerId { get; set; }
-        [Required]
         public string Name { get; set; }
         [Required]
         public string LastName { get; set; }
