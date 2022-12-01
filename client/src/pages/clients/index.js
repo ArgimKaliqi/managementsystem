@@ -10,6 +10,7 @@ import axios from 'axios'
 import { useEffect, useState } from "react";
 import { getClients } from "../../util/fetch";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 
@@ -51,6 +52,7 @@ const Clients = () => {
 
   return (
     <Box m="20px">
+      <ToastContainer />
       <Header title="Clients" subtitle="Add, Edit, Delete clients" />
       <Link to="/clientForm">
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Client</Button>

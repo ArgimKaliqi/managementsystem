@@ -6,52 +6,55 @@ import Header from "../../components/Header";
 import { registerClient } from "../../util/fetch";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const history = useNavigate()
   const [error, setError] = useState(null);
+  const [client, setClient] = useState([]);
+  const history = useNavigate();
+  const notify = () => toast.success("Client Successfully created")
 
-  const handleFormSubmit = async (values) => {
-    console.log(values)
 
-    await registerClient({
-        Name: values.name,
-        Surname: values.surname,
-        Gender: values.gender,
-        CivilStatus: values.civilstatus,
-        City: values.city,
-        Address: values.address,
-        HouseNumber: values.housenumber,
-        DoorNumber: values.doornumber,
-        StairsNumber: values.stairsnumber,
-        Postal: values.postal,
-        Email: values.email,
-        Status: values.lifestatus,
-        Bank: values.bank,
-        IBAN: values.iban,
-        SwiftCode: values.swiftcode,
-        Disease: values.disease,
-    })
-    .catch((error) => {
-        if(error.response) {
-            throw Error(
-                "Client already exists, Try again"
-            )
-        } else if (error.request) {
-            throw Error("HTTP REQUEST FAIL")
-        } else {
-            throw Error(error)
-        }
-    }).catch((error) => {
-        setError(error.message)
-    })
-    .then((error) => {
-        if(!error.response) {
-            history('/clients')
-        }
-    })
+  const handleFormSubmit =  (values) => {
 
+    
+    
+    axios.post("http://localhost:5000/api/client",{
+      Name: values.Name,
+      Surname: values.Surname,
+      Gender: values.Gender,
+      CivilStatus: values.CivilStatus,
+      City: values.City,
+      Address: values.Address,
+      HouseNumber: values.HouseNumber,
+      DoorNumber: values.DoorNumber,
+      StairsNumber: values.StairsNumber,
+      Postal: values.Postal,
+      Email: values.Email,
+      Status: values.Status,
+      Bank: values.Bank,
+      IBAN: values.IBAN,
+      SwiftCode: values.SwiftCode,
+      Disease: values.Disease
+    }).catch(function (error){
+      if (error.response){
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request){
+        console.log(error.request)
+      } else {
+        console.log('Error', error.message);
+      }
+    }).finally(
+      notify(),
+      history('/clients')
+    )
+    
+    
   };
 
   return (
@@ -70,6 +73,7 @@ const Form = () => {
           handleBlur,
           handleChange,
           handleSubmit,
+          submitForm,
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
@@ -87,10 +91,10 @@ const Form = () => {
                 label="First Name"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.name}
-                name="name"
-                error={!!touched.name && !!errors.name}
-                helperText={touched.name && errors.name}
+                value={values.Name}
+                name="Name"
+                error={!!touched.Name && !!errors.Name}
+                
                 sx={{ gridColumn: "span 1" }}
               />
               <TextField
@@ -100,30 +104,24 @@ const Form = () => {
                 label="Surname"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.surname}
-                name="surname"
-                error={!!touched.surname && !!errors.surname}
-                helperText={touched.surname && errors.surname}
+                value={values.Surname}
+                name="Surname"
+                error={!!touched.Surname && !!errors.Surname}
+               
                 sx={{ gridColumn: "span 1" }}
               />
-                <FormControl fullWidth sx={{ gridColumn: "span 1"}}>
-                 <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Gender
-                 </InputLabel>
-                 <NativeSelect
-                    onChange={handleChange}
-                    error={touched.gender && !!errors.gender }
-                    helperText={touched.gender && !!errors.gender }
-                    inputProps={{
-                        name: "gender",
-                        id: 'uncontrolled-native',
-                    }}
-                    >
-                        <option value={values.gender}>Male</option>
-                        <option value={values.gender}>Female</option>
-                    </NativeSelect>
-                </FormControl>
-
+                <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                label="Gender"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.Gender}
+                name="Gender"
+                error={!!touched.Gender && !!errors.Gender}
+                sx={{ gridColumn: "span 1" }}
+              />
 
               <TextField
                 fullWidth
@@ -132,10 +130,9 @@ const Form = () => {
                 label="Email"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.email}
-                name="email"
-                error={!!touched.email && !!errors.email}
-                helperText={touched.email && errors.email}
+                value={values.Email}
+                name="Email"
+                error={!!touched.Email && !!errors.Email}
                 sx={{ gridColumn: "span 2" }}
               />
 
@@ -146,10 +143,9 @@ const Form = () => {
                 label="City"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.city}
-                name="city"
-                error={!!touched.city && !!errors.city}
-                helperText={touched.city && errors.city}
+                value={values.City}
+                name="City"
+                error={!!touched.City && !!errors.City}
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -159,10 +155,10 @@ const Form = () => {
                 label="Address"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.address}
-                name="address"
-                error={!!touched.address && !!errors.address}
-                helperText={touched.address && errors.address}
+                value={values.Address}
+                name="Address"
+                error={!!touched.Address && !!errors.Address}
+                
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -172,10 +168,10 @@ const Form = () => {
                 label="Civil Status"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.civilstatus}
-                name="civilstatus"
-                error={!!touched.civilstatus && !!errors.civilstatus}
-                helperText={touched.civilstatus && errors.civilstatus}
+                value={values.CivilStatus}
+                name="CivilStatus"
+                error={!!touched.CivilStatus && !!errors.CivilStatus}
+               
                 sx={{ gridColumn: "span 2" }}
               />
               <TextField
@@ -185,10 +181,10 @@ const Form = () => {
                 label="House Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.housenumber}
-                name="housenumber"
-                error={!!touched.housenumber && !!errors.housenumber}
-                helperText={touched.housenumber && errors.housenumber}
+                value={values.HouseNumber}
+                name="HouseNumber"
+                error={!!touched.HouseNumber && !!errors.HouseNumber}
+        
                 sx={{ gridColumn: "span 1" }}
               />
               <TextField
@@ -198,10 +194,10 @@ const Form = () => {
                 label="Door Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.doornumber}
-                name="doornumber"
-                error={!!touched.doornumber && !!errors.doornumber}
-                helperText={touched.doornumber && errors.doornumber}
+                value={values.DoorNumber}
+                name="DoorNumber"
+                error={!!touched.DoorNumber && !!errors.DoorNumber}
+              
                 sx={{ gridColumn: "span 1" }}
               />
               <TextField
@@ -211,10 +207,10 @@ const Form = () => {
                 label="Stairs Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.stairsnumber}
-                name="stairsnumber"
-                error={!!touched.stairsnumber && !!errors.stairsnumber}
-                helperText={touched.stairsnumber && errors.stairsnumber}
+                value={values.StairsNumber}
+                name="StairsNumber"
+                error={!!touched.StairsNumber && !!errors.StairsNumber}
+             
                 sx={{ gridColumn: "span 1" }}
               />
               <TextField
@@ -224,29 +220,28 @@ const Form = () => {
                 label="Postal"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.postal}
-                name="postal"
-                error={!!touched.postal && !!errors.postal}
-                helperText={touched.postal && errors.postal}
+                value={values.Postal}
+                name="Postal"
+                error={!!touched.Postal && !!errors.Postal}
+              
                 sx={{ gridColumn: "span 1" }}
               />
+               
                <FormControl fullWidth>
                  <InputLabel variant="standard" htmlFor="uncontrolled-native">
                     Status
                  </InputLabel>
                  <NativeSelect
-                    error={touched.lifestatus && !!errors.lifestatus}
-                    helperText={touched.lifestatus && !!errors.lifestatus}
+                    error={touched.Status && !!errors.Status}
                     inputProps={{
                         name: "lifestatus",
                         id: 'uncontrolled-native',
                     }}
                     >
-                        <option value={values.lifestatus}>true</option>
-                        <option value={values.lifestatus}>false</option>
+                        <option value={values.Status}>true</option>
+                        <option value={values.Status}>false</option>
                     </NativeSelect>
                 </FormControl>
-
                 <TextField
                 fullWidth
                 variant="filled"
@@ -254,10 +249,10 @@ const Form = () => {
                 label="Bank"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.bank}
-                name="bank"
-                error={!!touched.bank && !!errors.bank}
-                helperText={touched.bank && errors.bank}
+                value={values.Bank}
+                name="Bank"
+                error={!!touched.Bank && !!errors.Bank}
+               
                 sx={{ gridColumn: "span 2" }}
               />
                 <TextField
@@ -267,10 +262,10 @@ const Form = () => {
                 label="IBAN"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.iban}
-                name="iban"
-                error={!!touched.iban && !!errors.iban}
-                helperText={touched.iban && errors.iban}
+                value={values.IBAN}
+                name="IBAN"
+                error={!!touched.IBAN && !!errors.IBAN}
+             
                 sx={{ gridColumn: "span 2" }}
               />
                 <TextField
@@ -280,10 +275,10 @@ const Form = () => {
                 label="Swift Code"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.swiftcode}
-                name="swiftcode"
-                error={!!touched.swiftcode && !!errors.swiftcode}
-                helperText={touched.swiftcode && errors.swiftcode}
+                value={values.SwiftCode}
+                name="SwiftCode"
+                error={!!touched.SwiftCode && !!errors.SwiftCode}
+           
                 sx={{ gridColumn: "span 1" }}
               />
                 <TextField
@@ -293,10 +288,10 @@ const Form = () => {
                 label="Disease"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.disease}
-                name="disease"
-                error={!!touched.disease && !!errors.disease}
-                helperText={touched.disease && errors.disease}
+                value={values.Disease}
+                name="Disease"
+                error={!!touched.Disease && !!errors.Disease}
+      
                 sx={{ gridColumn: "span 1" }}
               />
                 <FormControl fullWidth>
@@ -342,46 +337,43 @@ const Form = () => {
   );
 };
 
-const phoneRegExp =
-  /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/;
 
 const checkoutSchema = yup.object().shape({
-  name: yup.string().required("required"),
-  surname: yup.string().required("required"),
-  gender: yup.string().required("required"),
-  civilstatus: yup.string().required("required"),
-  city: yup.string().required("required"),
-  address: yup.string().required("required"),
-  housenumber: yup.number().required("required"),
-  doornumber: yup.number().required("required"),
-  stairsnumber: yup.number().required("required"),
-  postal: yup.string().required("required"),
-  email: yup.string().email("invalid email").required("required"),
-  lifestatus: yup.string().required("required"),
-  bank: yup.string().required("required"),
-  iban: yup.string().required("required"),
-  swiftcode: yup.string().required("required"),
-  disease: yup.string().required("required"),
-  
-  
+  Name: yup.string().required("required"),
+  Surname: yup.string().required("required"),
+  Gender: yup.string().required("required"),
+  CivilStatus: yup.string().required("required"),
+  City: yup.string().required("required"),
+  Address: yup.string().required("required"),
+  HouseNumber: yup.number().required("required"),
+  DoorNumber: yup.number().required("required"),
+  StairsNumber: yup.number().required("required"),
+  Postal: yup.string().required("required"),
+  Email: yup.string().email("invalid email").required("required"),
+  Status: yup.string().required("required"),
+  Bank: yup.string().required("required"),
+  IBAN: yup.string().required("required"),
+  SwiftCode: yup.string().required("required"),
+  Disease: yup.string().required("required"),
 });
 const initialValues = {
-  name: "",
-  surname: "",
-  gender: false,
-  civilstatus: "",
-  city: "",
-  address: "",
-  housenumber: 0,
-  doornumber: 0,
-  stairsnumber: 0,
-  postal: "",
-  email: "",
-  lifestatus: false,
-  bank: "",
-  iban: "",
-  swiftcode: "",
-  disease: ""
+  Name: "",
+  Surname: "",
+  Gender: "",
+  CivilStatus: "",
+  City: "",
+  Address: "",
+  HouseNumber: 0,
+  DoorNumber: 0,
+  StairsNumber: 0,
+  Postal: "",
+  Email: "",
+  Status: false,
+  Bank: "",
+  IBAN: "",
+  SwiftCode: "",
+  Disease: ""
 };
+
 
 export default Form;
