@@ -9,6 +9,6 @@ export function getClients() {
 }
 
 
-export function registerClient(client) {
+export function registerClient() {
     return  api.post('/client')
 }
