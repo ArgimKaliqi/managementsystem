@@ -36,7 +36,7 @@ namespace ManagementSystem.Controllers
             return worker;
         }
         [HttpPut]
-        public async Task<ActionResult<Worker>> UpdateWorker([FromForm] WorkerDTO workerDTO)
+        public async Task<ActionResult<Worker>> UpdateWorker( UpdateWorkerDTO workerDTO)
         {
             var worker = await _context.Workers.FindAsync(workerDTO.WorkerId);
             if (worker == null) return NotFound();
@@ -59,7 +59,7 @@ namespace ManagementSystem.Controllers
             return BadRequest(new ProblemDetails { Title = "Problem deleting the data" });
         }
         [HttpPost]
-        public async Task<ActionResult<Worker>> CreateProduct([FromForm] WorkerDTO workerDTO)
+        public async Task<ActionResult<Worker>> CreateProduct(CreateWorkerDTO workerDTO)
         {
 
             var worker = _mapper.Map<Worker>(workerDTO);

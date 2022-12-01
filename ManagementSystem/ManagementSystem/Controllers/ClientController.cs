@@ -36,9 +36,9 @@ namespace ManagementSystem.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<Client>> UpdateClient([FromForm] ClientDTO clientDTO)
+        public async Task<ActionResult<Client>> UpdateClient( UpdateClientDTO clientDTO)
         {
-            var client = await _context.Clients.FindAsync(clientDTO);
+            var client = await _context.Clients.FindAsync(clientDTO.ClientId);
             if (client== null) return NotFound();
             _mapper.Map(clientDTO, client);
             var result = await _context.SaveChangesAsync() > 0;
@@ -62,7 +62,7 @@ namespace ManagementSystem.Controllers
         }
         
         [HttpPost]
-        public async Task<ActionResult<Client>> CreateClient([FromForm] ClientDTO clientDTO)
+        public async Task<ActionResult<Client>> CreateClient( CreateClientDTO clientDTO)
         {
 
             var client = _mapper.Map<Client>(clientDTO);

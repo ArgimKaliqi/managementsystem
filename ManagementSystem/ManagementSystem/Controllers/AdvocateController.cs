@@ -38,9 +38,9 @@ namespace ManagementSystem.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<Advocate>> UpdateAdvocate([FromForm] AdvocateDTO advocateDTO)
+        public async Task<ActionResult<Advocate>> UpdateAdvocate(UpdateAdvocateDTO advocateDTO)
         {
-            var advocate = await _context.Advocates.FindAsync(advocateDTO);
+            var advocate = await _context.Advocates.FindAsync(advocateDTO.AdvocateId);
             if (advocate == null) return NotFound();
             _mapper.Map(advocateDTO, advocate);
             var result = await _context.SaveChangesAsync() > 0;
@@ -64,7 +64,7 @@ namespace ManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Advocate>> CreateAdvocate([FromForm] AdvocateDTO advocateDTO)
+        public async Task<ActionResult<Advocate>> CreateAdvocate( CreateAdvocateDTO advocateDTO)
         {
 
             var advocate = _mapper.Map<Advocate>(advocateDTO);

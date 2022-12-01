@@ -8,10 +8,14 @@ namespace ManagementSystem.Services
     {
         public MappingProfiles()
         {
-            CreateMap<ClientDTO, Client>();
-            CreateMap<WorkerDTO, Worker>();
-            CreateMap<AdvocateDTO, Advocate>();
-            CreateMap<CompanyDTO, Company>();
+            CreateMap<CreateClientDTO, Client>();
+            CreateMap<UpdateClientDTO, Client>();
+            CreateMap<CreateWorkerDTO, Worker>();
+            CreateMap<UpdateWorkerDTO, Worker>();
+            CreateMap<CreateAdvocateDTO, Advocate>();
+            CreateMap<UpdateAdvocateDTO, Advocate>();
+            CreateMap<CreateCompanyDTO, Company>();
+            CreateMap<UpdateCompanyDTO, Company>();
         }
     }
 }
