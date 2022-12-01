@@ -5,20 +5,22 @@ import Button from '@mui/material/Button';
 import Header from "../../components/Header";
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { getClients } from "../../util/fetch";
+import { getAdvocates } from "../../util/fetch";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 // Clients data untill advocates controller gets finished
 
-const Clients = () => {
+const Advocates = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [tableData, setTableData] = useState([]);
 
 
   useEffect(() => {
-    const fetchClients = async () => {
+    const fetchAdvocates = async () => {
       try {
-        getClients().then(function (response){
+        getAdvocates().then(function (response){
           setTableData(response.data.reverse())
         })
       } catch ( err) {
@@ -31,22 +33,25 @@ const Clients = () => {
         }
       }
     }
-    fetchClients();
+    fetchAdvocates();
   },[])
 
 
   const columns = [
     { field: 'advocateId', headerName: "ID"},
     { field: 'name', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
-    { field: 'surname', headerName: "Surname",},
+    { field: 'lastName', headerName: "Last Name",},
     { field: 'address', headerName: "Address", flex: 1},
     { field: 'email', headerName: "Email", flex: 1},
 ];
 
   return (
     <Box m="20px">
+      <ToastContainer />
       <Header title="Advocates" subtitle="Add, Edit, Delete advocates" />
+      <Link to="/advocateForm">
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Advocate</Button>
+      </Link>
       <Box
       m="40px 0 0 0"
       height="65vh"
@@ -59,10 +64,10 @@ const Clients = () => {
             "& .MuiButton-root": {color: colors.blueAccent[600]}
     }}
       >
-        <DataGrid getRowId={(row) => row.clientId} rows={tableData} columns={columns} />
+        <DataGrid getRowId={(row) => row.advocateId} rows={tableData} columns={columns} />
       </Box>
     </Box>
   );
 };
 
-export default Clients;
+export default Advocates;

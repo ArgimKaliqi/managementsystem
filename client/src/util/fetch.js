@@ -9,6 +9,10 @@ export function getClients() {
 }
 
 
-export function registerClient() {
-    return  api.post('/client')
+// export function registerClient() {
+//     return  api.post('/client')
+// }
+
+export function getAdvocates() {
+    return api.get('/advocate')
 }
