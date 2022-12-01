@@ -10,6 +10,7 @@ import Dashboard from './pages/Dashboard'
 import Clients from './pages/clients'
 import Form from './pages/clients/clientForm'
 import Advocate from './pages/advocates'
+import AdvocateForm from './pages/advocates/advocateForm';
 // import Coworkers from './pages/coworkers'
 // import Companies from './pages/companies'
 // import Reports from './pages/reports'
@@ -41,9 +42,11 @@ function App() {
 
           
           {/* <Route path='/tasks' element={<Tasks />} /> */}
-          <Route path='clients' element={<Clients/>} />
-           <Route path='/advocate' element={<Advocate />} /> 
+           <Route path='clients' element={<Clients/>} />
            <Route path='/clientForm' element={<Form />} /> 
+           <Route path='/advocate' element={<Advocate />} /> 
+           <Route path='/advocateForm' element={<AdvocateForm />} /> 
+
           {/* <Route path='/coworkers' element={<Coworkers/>} /> */}
           {/* <Route path='/companies' element={<Companies/>} /> */}
           {/* <Route path='/reports' element={<Reports/>} /> */}

@@ -10,33 +10,34 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Form = () => {
+const AdvocateForm = () => {
   const isNonMobile = useMediaQuery("(min-width:600px)");
   const history = useNavigate();
-  const notify = () => toast.success("Client Successfully created")
+  const notify = () => toast.success("Advocate Successfully created")
 
 
   const handleFormSubmit =  (values) => {
 
     
     
-    axios.post("http://localhost:5000/api/client",{
+    axios.post("http://localhost:5000/api/advocate",{
       Name: values.Name,
-      Surname: values.Surname,
+      LastName: values.LastName,
       Gender: values.Gender,
       CivilStatus: values.CivilStatus,
       City: values.City,
+      Location: values.Location,
       Address: values.Address,
+      Street: values.Street,
       HouseNumber: values.HouseNumber,
       DoorNumber: values.DoorNumber,
       StairsNumber: values.StairsNumber,
       Postal: values.Postal,
       Email: values.Email,
-      Status: values.Status,
       Bank: values.Bank,
       IBAN: values.IBAN,
       SwiftCode: values.SwiftCode,
-      Disease: values.Disease
+      Department: values.Department
     }).catch(function (error){
       if (error.response){
         console.log(error.response.data);
@@ -49,7 +50,7 @@ const Form = () => {
       }
     }).finally(
       notify(),
-      history('/clients')
+      history('/advocate')
     )
     
     
@@ -93,7 +94,7 @@ const Form = () => {
                 name="Name"
                 error={!!touched.Name && !!errors.Name}
                 
-                sx={{ gridColumn: "span 1" }}
+                sx={{ gridColumn: "span 2" }}
               />
               <TextField
                 fullWidth
@@ -102,11 +103,11 @@ const Form = () => {
                 label="Surname"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Surname}
-                name="Surname"
-                error={!!touched.Surname && !!errors.Surname}
+                value={values.LastName}
+                name="LastName"
+                error={!!touched.LastName && !!errors.LastName}
                
-                sx={{ gridColumn: "span 1" }}
+                sx={{ gridColumn: "span 2" }}
               />
                 <TextField
                 fullWidth
@@ -131,7 +132,7 @@ const Form = () => {
                 value={values.Email}
                 name="Email"
                 error={!!touched.Email && !!errors.Email}
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span 1" }}
               />
 
               <TextField
@@ -144,7 +145,7 @@ const Form = () => {
                 value={values.City}
                 name="City"
                 error={!!touched.City && !!errors.City}
-                sx={{ gridColumn: "span 2" }}
+                sx={{ gridColumn: "span 1" }}
               />
               <TextField
                 fullWidth
@@ -156,6 +157,32 @@ const Form = () => {
                 value={values.Address}
                 name="Address"
                 error={!!touched.Address && !!errors.Address}
+                
+                sx={{ gridColumn: "span 1" }}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                label="Location"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.Location}
+                name="Location"
+                error={!!touched.Location && !!errors.Location}
+                
+                sx={{ gridColumn: "span 2" }}
+              />
+              <TextField
+                fullWidth
+                variant="filled"
+                type="text"
+                label="Street"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                value={values.Street}
+                name="Street"
+                error={!!touched.Street && !!errors.Street}
                 
                 sx={{ gridColumn: "span 2" }}
               />
@@ -175,7 +202,7 @@ const Form = () => {
               <TextField
                 fullWidth
                 variant="filled"
-                type="number"
+                type="text"
                 label="House Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -188,7 +215,7 @@ const Form = () => {
               <TextField
                 fullWidth
                 variant="filled"
-                type="number"
+                type="text"
                 label="Door Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -201,7 +228,7 @@ const Form = () => {
               <TextField
                 fullWidth
                 variant="filled"
-                type="number"
+                type="text"
                 label="Stairs Number"
                 onBlur={handleBlur}
                 onChange={handleChange}
@@ -224,23 +251,7 @@ const Form = () => {
               
                 sx={{ gridColumn: "span 1" }}
               />
-               
-               <FormControl fullWidth>
-                 <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Status
-                 </InputLabel>
-                 <NativeSelect
-                    error={touched.Status && !!errors.Status}
-                    inputProps={{
-                        name: "lifestatus",
-                        id: 'uncontrolled-native',
-                    }}
-                    >
-                        <option value={values.Status}>true</option>
-                        <option value={values.Status}>false</option>
-                    </NativeSelect>
-                </FormControl>
-                <TextField
+              <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -253,6 +264,7 @@ const Form = () => {
                
                 sx={{ gridColumn: "span 2" }}
               />
+              
                 <TextField
                 fullWidth
                 variant="filled"
@@ -283,38 +295,45 @@ const Form = () => {
                 fullWidth
                 variant="filled"
                 type="text"
-                label="Disease"
+                label="Department"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.Disease}
-                name="Disease"
-                error={!!touched.Disease && !!errors.Disease}
-      
+                value={values.Department}
+                name="Department"
+                error={!!touched.Department && !!errors.Department}
+           
+                sx={{ gridColumn: "span 1" }}
+              />
+                <TextField
+                fullWidth
+                variant="filled"
+                type="number"
+                label="Salary"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                name="Salary"
+           
+                sx={{ gridColumn: "span 1" }}
+              />
+                <TextField
+                fullWidth
+                variant="filled"
+                type="number"
+                label="AdministrativeTax"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                name="AdministrativeTax"
+           
                 sx={{ gridColumn: "span 1" }}
               />
                 <FormControl fullWidth>
                  <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Worker ID
+                    IsDisabled
                  </InputLabel>
                  <NativeSelect
                     defaultValue={"ID"}
                     inputProps={{
-                        name: "workerid",
-                        id: 'uncontrolled-native',
-                    }}
-                    >
-                        <option value={"No info"}>No info</option>
-                        <option value={"No info"}>No info</option>
-                    </NativeSelect>
-                </FormControl>
-                <FormControl fullWidth>
-                 <InputLabel variant="standard" htmlFor="uncontrolled-native">
-                    Advocate ID
-                 </InputLabel>
-                 <NativeSelect
-                    defaultValue={"ID"}
-                    inputProps={{
-                        name: "advocateid",
+                        name: "IsDisabled",
                         id: 'uncontrolled-native',
                     }}
                     >
@@ -338,40 +357,44 @@ const Form = () => {
 
 const checkoutSchema = yup.object().shape({
   Name: yup.string().required("required"),
-  Surname: yup.string().required("required"),
+  LastName: yup.string().required("required"),
   Gender: yup.string().required("required"),
   CivilStatus: yup.string().required("required"),
   City: yup.string().required("required"),
+  Location: yup.string().required("required"),
   Address: yup.string().required("required"),
-  HouseNumber: yup.number().required("required"),
-  DoorNumber: yup.number().required("required"),
-  StairsNumber: yup.number().required("required"),
+  Street: yup.string().required("required"),
+  HouseNumber: yup.string().required("required"),
+  DoorNumber: yup.string().required("required"),
+  StairsNumber: yup.string().required("required"),
   Postal: yup.string().required("required"),
   Email: yup.string().email("invalid email").required("required"),
-  Status: yup.string().required("required"),
   Bank: yup.string().required("required"),
   IBAN: yup.string().required("required"),
   SwiftCode: yup.string().required("required"),
-  Disease: yup.string().required("required"),
+  Department: yup.string().required("required"),
+  
+  
 });
 const initialValues = {
   Name: "",
-  Surname: "",
+  LastName: "",
   Gender: "",
   CivilStatus: "",
   City: "",
+  Location: "",
   Address: "",
-  HouseNumber: 0,
-  DoorNumber: 0,
-  StairsNumber: 0,
+  Street: "",
+  HouseNumber: "",
+  DoorNumber: "",
+  StairsNumber: "",
   Postal: "",
   Email: "",
-  Status: false,
   Bank: "",
   IBAN: "",
   SwiftCode: "",
-  Disease: ""
+  Department: ""
 };
 
 
-export default Form;
+export default AdvocateForm;
