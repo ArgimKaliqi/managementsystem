@@ -5,8 +5,7 @@ namespace ManagementSystem.DTOs
 {
     public class ClientDTO
     {
-        [Required]
-        public int ClientId { get; set; }
+
 
         [Required]
         public string Name { get; set; }

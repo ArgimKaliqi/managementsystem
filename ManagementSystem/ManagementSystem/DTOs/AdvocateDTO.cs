@@ -9,8 +9,7 @@ namespace ManagementSystem.DTOs
     public class AdvocateDTO
     {
 
-        [Required]
-        public int AdvocateId { get; set; }
+
 
         [Required]
         public string Name { get; set; }

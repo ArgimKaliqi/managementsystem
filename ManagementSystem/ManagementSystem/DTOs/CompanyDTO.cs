@@ -10,7 +10,7 @@ namespace ManagementSystem.DTOs
     {
 
         
-        public int CompanyId { get; set; }
+   
         [Required]
 
         public string CName { get; set; }
