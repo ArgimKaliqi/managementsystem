@@ -38,9 +38,9 @@ namespace ManagementSystem.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<Company>> UpdateCompany([FromForm] CompanyDTO companyDTO)
+        public async Task<ActionResult<Company>> UpdateCompany( UpdateCompanyDTO companyDTO)
         {
-            var company = await _context.Companies.FindAsync(companyDTO);
+            var company = await _context.Companies.FindAsync(companyDTO.CompanyId);
             if (company == null) return NotFound();
             _mapper.Map(companyDTO, company);
             var result = await _context.SaveChangesAsync() > 0;
@@ -64,7 +64,7 @@ namespace ManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Company>> CreateCompany([FromForm] CompanyDTO companyDTO)
+        public async Task<ActionResult<Company>> CreateCompany( CreateCompanyDTO companyDTO)
         {
 
             var company = _mapper.Map<Company>(companyDTO);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "clp+6nm6v14wMvWWYZOVpOUuQKhfdY28Rn/TpYyKTj0QHEKV72UAhidzyo6r/6ZJ2MDkaZ6J0WcSTkyhhWxn8A==",
+  "dgSpecHash": "N1UXWG2VSw4I83BhsJNBvrZxdIwGo7kzklVq0uGmRkHA/gbpt/KeBmNciwYGwEQeIiZcN6v/Lr5kIupxhNmNwA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dalma\\source\\repos\\Management System\\managementsystem\\ManagementSystem\\ManagementSystem\\ManagementSystem.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Users\\Dalma\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Dalma\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Dalma\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
+    "C:\\Users\\Dalma\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
     "C:\\Users\\Dalma\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.4\\sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "C:\\Users\\Dalma\\.nuget\\packages\\sqlitepclraw.core\\2.0.4\\sqlitepclraw.core.2.0.4.nupkg.sha512",
     "C:\\Users\\Dalma\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.4\\sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",
