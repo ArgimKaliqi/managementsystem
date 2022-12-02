@@ -16,3 +16,7 @@ export function getClients() {
 export function getAdvocates() {
     return api.get('/advocate')
 }
+
+export function getCompanies() {
+    return api.get('/company')
+}

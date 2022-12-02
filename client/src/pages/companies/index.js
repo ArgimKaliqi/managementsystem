@@ -5,22 +5,22 @@ import Button from '@mui/material/Button';
 import Header from "../../components/Header";
 import axios from 'axios'
 import { useEffect, useState } from "react";
-import { getAdvocates } from "../../util/fetch";
+import { getCompanies } from "../../util/fetch";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 
-const Advocates = () => {
+const Companies = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [tableData, setTableData] = useState([]);
 
 
   useEffect(() => {
-    const fetchAdvocates = async () => {
+    const fetchCompanies = async () => {
       try {
-        getAdvocates().then(function (response){
+        getCompanies().then(function (response){
           setTableData(response.data.reverse())
         })
       } catch ( err) {
@@ -33,24 +33,24 @@ const Advocates = () => {
         }
       }
     }
-    fetchAdvocates();
+    fetchCompanies();
   },[])
 
 
   const columns = [
-    { field: 'advocateId', headerName: "ID"},
-    { field: 'name', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
-    { field: 'lastName', headerName: "Last Name",},
-    { field: 'address', headerName: "Address", flex: 1},
-    { field: 'email', headerName: "Email", flex: 1},
+    { field: 'companyId', headerName: "ID"},
+    { field: 'cName', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
+    { field: 'cPhonenumber', headerName: "Phone Number",},
+    { field: 'cAddress', headerName: "Address", flex: 1},
+    { field: 'cEmail', headerName: "Email", flex: 1},
 ];
 
   return (
-    <Box m="20px">
-      <ToastContainer />
-      <Header title="Advocates" subtitle="Add, Edit, Delete advocates" />
-      <Link to="/advocateForm">
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Advocate</Button>
+      <Box m="20px">
+        <ToastContainer />
+      <Header title="Companies" subtitle="Add, Edit, Delete Companies" />
+      <Link to="/companyForm">
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Company</Button>
       </Link>
       <Box
       m="40px 0 0 0"
@@ -64,10 +64,10 @@ const Advocates = () => {
             "& .MuiButton-root": {color: colors.blueAccent[600]}
     }}
       >
-        <DataGrid getRowId={(row) => row.advocateId} rows={tableData} columns={columns} />
+        <DataGrid getRowId={(row) => row.companyId} rows={tableData} columns={columns} />
       </Box>
     </Box>
   );
 };
 
-export default Advocates;
+export default Companies;

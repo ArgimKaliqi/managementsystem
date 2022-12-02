@@ -144,6 +144,13 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
+              <Item
+                title="Companies"
+                to="/companies"
+                icon={<AddBusinessOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+              />
   
               <Typography
                 variant="h6"
@@ -156,13 +163,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 title="Co-workers"
                 to="/coworkers"
                 icon={<HandshakeOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-              <Item
-                title="Companies"
-                to="/companies"
-                icon={<AddBusinessOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />

@@ -58,7 +58,7 @@ const AdvocateForm = () => {
 
   return (
     <Box m="20px">
-      <Header title="Add Clients" subtitle="Fill in the clients information" />
+      <Header title="Add Advocates" subtitle="Fill in the advocates information" />
 
       <Formik
         onSubmit={handleFormSubmit}
@@ -344,7 +344,7 @@ const AdvocateForm = () => {
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="secondary" variant="contained">
-                Create New User
+                Create New Advocate
               </Button>
             </Box>
           </form>
