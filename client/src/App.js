@@ -12,7 +12,8 @@ import Form from './pages/clients/clientForm'
 import Advocate from './pages/advocates'
 import AdvocateForm from './pages/advocates/advocateForm';
 // import Coworkers from './pages/coworkers'
-// import Companies from './pages/companies'
+ import Companies from './pages/companies'
+ import CompanyForm from './pages/companies/companyForm';
 // import Reports from './pages/reports'
 // import Schedule from './pages/schedule'
 // import Borxhet from './pages/borxhet'
@@ -46,9 +47,10 @@ function App() {
            <Route path='/clientForm' element={<Form />} /> 
            <Route path='/advocate' element={<Advocate />} /> 
            <Route path='/advocateForm' element={<AdvocateForm />} /> 
+           <Route path='/companies' element={<Companies/>} /> 
+           <Route path='/companyForm' element={<CompanyForm/>} /> 
 
           {/* <Route path='/coworkers' element={<Coworkers/>} /> */}
-          {/* <Route path='/companies' element={<Companies/>} /> */}
           {/* <Route path='/reports' element={<Reports/>} /> */}
           {/* <Route path='/schedule' element={<Schedule/>} /> */}
           {/* <Route path='/borxhet' element={<Borxhet/>} /> */}
