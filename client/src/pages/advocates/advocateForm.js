@@ -16,11 +16,11 @@ const AdvocateForm = () => {
   const notify = () => toast.success("Advocate Successfully created")
 
 
-  const handleFormSubmit =  (values) => {
+  const handleFormSubmit = async (values) => {
 
     
     
-    axios.post("http://localhost:5000/api/advocate",{
+   await axios.post("http://localhost:5000/api/advocate",{
       Name: values.Name,
       LastName: values.LastName,
       Gender: values.Gender,

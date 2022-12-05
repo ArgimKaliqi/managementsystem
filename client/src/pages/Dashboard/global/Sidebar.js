@@ -137,6 +137,13 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
+                <Item
+                title="Co-workers"
+                to="/coworkers"
+                icon={<HandshakeOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+              />
               <Item
                 title="Advocates"
                 to="/advocate"
@@ -151,7 +158,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
-  
               <Typography
                 variant="h6"
                 color={colors.grey[300]}
@@ -159,13 +165,6 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
               >
                 Pages and Charts
               </Typography>
-              <Item
-                title="Co-workers"
-                to="/coworkers"
-                icon={<HandshakeOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
               <Item
                 title="Reports"
                 to="/reports"

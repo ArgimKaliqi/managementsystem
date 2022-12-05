@@ -16,11 +16,11 @@ const CompanyForm = () => {
   const notify = () => toast.success("Company Successfully created")
 
 
-  const handleFormSubmit =  (values) => {
+  const handleFormSubmit =  async (values) => {
 
     
     
-    axios.post("http://localhost:5000/api/company",{
+    await axios.post("http://localhost:5000/api/company",{
         CName: values.CName,
         CPhonenumber: values.CPhonenumber,
         CAddress: values.CAddress,
