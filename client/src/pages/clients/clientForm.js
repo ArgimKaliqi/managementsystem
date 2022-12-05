@@ -16,11 +16,11 @@ const Form = () => {
   const notify = () => toast.success("Client Successfully created")
 
 
-  const handleFormSubmit =  (values) => {
+  const handleFormSubmit =  async (values) => {
 
     
     
-    axios.post("http://localhost:5000/api/client",{
+    await axios.post("http://localhost:5000/api/client",{
       Name: values.Name,
       Surname: values.Surname,
       Gender: values.Gender,
