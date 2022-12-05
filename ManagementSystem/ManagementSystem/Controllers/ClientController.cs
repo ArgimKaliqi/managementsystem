@@ -65,11 +65,19 @@ namespace ManagementSystem.Controllers
         public async Task<ActionResult<Client>> CreateClient( CreateClientDTO clientDTO)
         {
 
+            if (await UserExists(clientDTO.Email)) return BadRequest("User already exists");
+
             var client = _mapper.Map<Client>(clientDTO);
             _context.Clients.Add(client);
             var result = await _context.SaveChangesAsync() > 0;
             if (result) return CreatedAtRoute("GetClients", new { Id = client.ClientId }, client);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
+        }
+
+
+        private async Task<bool> UserExists(string email)
+        {
+            return await _context.Clients.AnyAsync(x => x.Email == email.ToLower());
         }
     }
 }

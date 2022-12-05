@@ -61,12 +61,17 @@ namespace ManagementSystem.Controllers
         [HttpPost]
         public async Task<ActionResult<Worker>> CreateProduct(CreateWorkerDTO workerDTO)
         {
+            if (await UserExists(workerDTO.Email)) return BadRequest("User already exists");
 
             var worker = _mapper.Map<Worker>(workerDTO);
             _context.Workers.Add(worker);
             var result = await _context.SaveChangesAsync() > 0;
             if (result) return CreatedAtRoute("GetWorkers", new { Id = worker.WorkerId }, worker);
             return BadRequest(new ProblemDetails { Title = "Problem creating new data" });
+        }
+        private async Task<bool> UserExists(string email)
+        {
+            return await _context.Workers.AnyAsync(x => x.Email == email.ToLower());
         }
     }
 }
