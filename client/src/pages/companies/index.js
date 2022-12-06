@@ -47,7 +47,6 @@ const Companies = () => {
 
   return (
       <Box m="20px">
-        <ToastContainer />
       <Header title="Companies" subtitle="Add, Edit, Delete Companies" />
       <Link to="/companyForm">
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Company</Button>
