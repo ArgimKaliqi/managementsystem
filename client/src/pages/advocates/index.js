@@ -47,7 +47,6 @@ const Advocates = () => {
 
   return (
     <Box m="20px">
-      <ToastContainer />
       <Header title="Advocates" subtitle="Add, Edit, Delete advocates" />
       <Link to="/advocateForm">
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Advocate</Button>

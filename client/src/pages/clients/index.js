@@ -52,7 +52,6 @@ const Clients = () => {
 
   return (
     <Box m="20px">
-      <ToastContainer />
       <Header title="Clients" subtitle="Add, Edit, Delete clients" />
       <Link to="/clientForm">
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Client</Button>

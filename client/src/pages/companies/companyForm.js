@@ -1,22 +1,22 @@
-import { Box, Button, TextField, Select, FormControl, InputLabel, NativeSelect } from "@mui/material";
+import { Box, Button, TextField, Select, FormControl, InputLabel, NativeSelect, useTheme } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Header from "../../components/Header";
-import { registerClient } from "../../util/fetch";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { tokens } from "../../theme";
 
 const CompanyForm = () => {
+  const theme = useTheme();
   const isNonMobile = useMediaQuery("(min-width:600px)");
-  const history = useNavigate();
+  const colors = tokens(theme.palette.mode);
   const notify = () => toast.success("Company Successfully created")
+  const notifyError = () => toast.error("Company with this email exists!");
 
-
-  const handleFormSubmit =  async (values) => {
+  const handleFormSubmit =  async (values, actions) => {
 
     
     
@@ -32,7 +32,8 @@ const CompanyForm = () => {
         
     }).catch(function (error){
       if (error.response){
-        console.log(error.response.data);
+        notifyError()
+        actions.resetForm();
         console.log(error.response.status);
         console.log(error.response.headers);
       } else if (error.request){
@@ -40,17 +41,23 @@ const CompanyForm = () => {
       } else {
         console.log('Error', error.message);
       }
-    }).finally(
-        notify(),
-        history('/companies')
-    )
-    
-    
+    }).then((error) =>{
+      if(!error.response){
+      notify()
+      actions.resetForm();
+      }
+    }
+      )
+     
   };
 
   return (
     <Box m="20px">
+      <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Company" subtitle="Fill in the companies information" />
+      <Link to="/companies">
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Companies Table</Button>
+      </Link>
 
       <Formik
         onSubmit={handleFormSubmit}
