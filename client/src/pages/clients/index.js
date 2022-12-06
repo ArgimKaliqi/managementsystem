@@ -53,7 +53,7 @@ const Clients = () => {
   return (
     <Box m="20px">
       <Header title="Clients" subtitle="Add, Edit, Delete clients" />
-      <Link to="/clientForm">
+      <Link to="/clientForm" style={{ textDecoration: 'none' }}>
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Client</Button>
       </Link>
       <Box

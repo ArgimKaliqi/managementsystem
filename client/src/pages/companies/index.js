@@ -48,7 +48,7 @@ const Companies = () => {
   return (
       <Box m="20px">
       <Header title="Companies" subtitle="Add, Edit, Delete Companies" />
-      <Link to="/companyForm">
+      <Link to="/companyForm" style={{ textDecoration: 'none' }}>
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Company</Button>
       </Link>
       <Box

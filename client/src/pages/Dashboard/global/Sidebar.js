@@ -138,8 +138,8 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 setSelected={setSelected}
               />
                 <Item
-                title="Co-workers"
-                to="/coworkers"
+                title="Workers"
+                to="/workers"
                 icon={<HandshakeOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}

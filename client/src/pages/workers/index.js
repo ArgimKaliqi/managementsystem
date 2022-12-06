@@ -3,27 +3,26 @@ import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import Button from '@mui/material/Button';
 import Header from "../../components/Header";
-import axios from 'axios'
 import { useEffect, useState } from "react";
-import { getAdvocates } from "../../util/fetch";
+import { getWorkers } from "../../util/fetch";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 
 
-const Advocates = () => {
+const Workers = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [tableData, setTableData] = useState([]);
 
 
   useEffect(() => {
-    const fetchAdvocates = async () => {
+    const fetchWorkers = async () => {
       try {
-        getAdvocates().then(function (response){
+        getWorkers().then(function (response){
           setTableData(response.data.reverse())
         })
-      } catch ( err) {
+      } catch (err) {
         if(err.response){
           console.log(err.response.data)
           console.log(err.response.status)
@@ -33,23 +32,23 @@ const Advocates = () => {
         }
       }
     }
-    fetchAdvocates();
+    fetchWorkers();
   },[])
 
 
   const columns = [
-    { field: 'advocateId', headerName: "ID"},
-    { field: 'name', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
-    { field: 'lastName', headerName: "Last Name",},
-    { field: 'address', headerName: "Address", flex: 1},
-    { field: 'email', headerName: "Email", flex: 1},
+    { field: 'companyId', headerName: "ID"},
+    { field: 'cName', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
+    { field: 'cPhonenumber', headerName: "Phone Number",},
+    { field: 'cAddress', headerName: "Address", flex: 1},
+    { field: 'cEmail', headerName: "Email", flex: 1},
 ];
 
   return (
-    <Box m="20px">
-      <Header title="Advocates" subtitle="Add, Edit, Delete advocates" />
-      <Link to="/advocateForm" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Advocate</Button>
+      <Box m="20px">
+      <Header title="Workers" subtitle="Add, Edit, Delete Workers" />
+      <Link to="/workerForm" style={{ textDecoration: 'none' }}>
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700]}}>New Worker</Button>
       </Link>
       <Box
       m="40px 0 0 0"
@@ -63,10 +62,10 @@ const Advocates = () => {
             "& .MuiButton-root": {color: colors.blueAccent[600]}
     }}
       >
-        <DataGrid getRowId={(row) => row.advocateId} rows={tableData} columns={columns} />
+        <DataGrid getRowId={(row) => row.companyId} rows={tableData} columns={columns} />
       </Box>
     </Box>
   );
 };
 
-export default Advocates;
+export default Workers;
