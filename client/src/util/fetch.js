@@ -20,3 +20,7 @@ export function getAdvocates() {
 export function getCompanies() {
     return api.get('/company')
 }
+
+export function getWorkers() {
+    return api.get('/worker')
+}
