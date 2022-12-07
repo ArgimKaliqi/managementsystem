@@ -37,11 +37,11 @@ const Workers = () => {
 
 
   const columns = [
-    { field: 'companyId', headerName: "ID"},
-    { field: 'cName', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
-    { field: 'cPhonenumber', headerName: "Phone Number",},
-    { field: 'cAddress', headerName: "Address", flex: 1},
-    { field: 'cEmail', headerName: "Email", flex: 1},
+    { field: 'workerId', headerName: "ID"},
+    { field: 'name', headerName: "Name", flex: 1, cellClassName: "name-column--cell"},
+    { field: 'lastName', headerName: "Phone Number",},
+    { field: 'address', headerName: "Address", flex: 1},
+    { field: 'email', headerName: "Email", flex: 1},
 ];
 
   return (
@@ -62,7 +62,7 @@ const Workers = () => {
             "& .MuiButton-root": {color: colors.blueAccent[600]}
     }}
       >
-        <DataGrid getRowId={(row) => row.companyId} rows={tableData} columns={columns} />
+        <DataGrid getRowId={(row) => row.workerId} rows={tableData} columns={columns} />
       </Box>
     </Box>
   );
