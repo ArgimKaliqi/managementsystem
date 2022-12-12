@@ -8,6 +8,7 @@ import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { tokens } from "../../theme";
+import KeyboardReturnOutlinedIcon from '@mui/icons-material/KeyboardReturnOutlined';
 
 const Form = () => {
   const theme = useTheme();
@@ -61,6 +62,7 @@ const Form = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Clients" subtitle="Fill in the clients information" />
+      <KeyboardReturnOutlinedIcon />
       <Link to="/clients" style={{ textDecoration: 'none' }}>
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Clients Table</Button>
       </Link>

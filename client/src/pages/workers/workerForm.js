@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { tokens } from "../../theme";
+import KeyboardReturnOutlinedIcon from '@mui/icons-material/KeyboardReturnOutlined';
 
 const WorkerForm = () => {
   const theme = useTheme();
@@ -64,6 +65,7 @@ const WorkerForm = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Worker" subtitle="Fill in the workers information" />
+      <KeyboardReturnOutlinedIcon />
       <Link to="/workers" style={{ textDecoration: 'none' }}>
       <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Workers Table</Button>
       </Link>
