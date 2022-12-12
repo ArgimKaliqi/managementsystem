@@ -15,8 +15,8 @@ import AdvocateForm from './pages/advocates/advocateForm';
  import WorkerForm from './pages/workers/workerForm';
  import Companies from './pages/companies'
  import CompanyForm from './pages/companies/companyForm';
+ import Schedule from './pages/calendar'
 // import Reports from './pages/reports'
-// import Schedule from './pages/schedule'
 // import Borxhet from './pages/borxhet'
 // import Paushall from './pages/paushall'
 // import Line from './pages/Line'
@@ -52,8 +52,8 @@ function App() {
            <Route path='/companyForm' element={<CompanyForm/>} /> 
             <Route path='/workers' element={<Workers/>} /> 
             <Route path='/workerForm' element={<WorkerForm />} />
+            <Route path='/schedule' element={<Schedule/>} />
           {/* <Route path='/reports' element={<Reports/>} /> */}
-          {/* <Route path='/schedule' element={<Schedule/>} /> */}
           {/* <Route path='/borxhet' element={<Borxhet/>} /> */}
           {/* <Route path='/paushall' element={<Paushall/>} /> */}
           {/* <Route path='/Line' element={<Line/>} /> */}
