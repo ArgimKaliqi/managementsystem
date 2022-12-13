@@ -180,17 +180,17 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
                 selected={selected}
                 setSelected={setSelected}
               />
+                <Item
+                  title="Schedule"
+                  to="/schedule"
+                  icon={<CalendarMonthOutlinedIcon />}
+                  selected={selected}
+                  setSelected={setSelected}
+                />
               <Item
                 title="Paushall"
                 to="/paushall"
                 icon={<ShuffleOnOutlinedIcon />}
-                selected={selected}
-                setSelected={setSelected}
-              />
-              <Item
-                title="Schedule"
-                to="/schedule"
-                icon={<CalendarMonthOutlinedIcon />}
                 selected={selected}
                 setSelected={setSelected}
               />
