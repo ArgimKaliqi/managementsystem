@@ -37,7 +37,7 @@ namespace ManagementSystem.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("CivilStatus")
-                        .HasColumnType("TEXT");  
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Department")
                         .HasColumnType("TEXT");
