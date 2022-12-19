@@ -15,3 +15,4 @@ namespace ManagementSystem.Data.Migrations
         }
     }
 }
+   

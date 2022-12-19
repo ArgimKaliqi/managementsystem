@@ -20,3 +20,4 @@ namespace ManagementSystem.Entities
         public virtual Client Client { get; set; }
     }
 }
+  

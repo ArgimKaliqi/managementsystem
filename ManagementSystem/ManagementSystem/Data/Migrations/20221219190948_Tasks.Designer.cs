@@ -10,7 +10,7 @@ namespace ManagementSystem.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20221219190948_Tasks")]
-    partial class Tasks
+    partial class Tasks  
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
