@@ -482,3 +482,5 @@ ManagementSystem/ManagementSystem/obj/project.nuget.cache
 ManagementSystem/ManagementSystem/bin/Debug/net5.0/ManagementSystem.dll
 ManagementSystem/ManagementSystem/bin/Debug/net5.0/ManagementSystem.pdb
 ManagementSystem/.vs/ManagementSystem/v17/.suo
+ManagementSystem/ManagementSystem/obj/Debug/net5.0/ManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+ManagementSystem/ManagementSystem/obj/Debug/net5.0/ManagementSystem.assets.cache
