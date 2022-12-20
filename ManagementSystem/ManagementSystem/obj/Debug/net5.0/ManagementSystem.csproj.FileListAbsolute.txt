@@ -349,3 +349,8 @@ C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\
 C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\runtimes\osx-x64\native\libsqlite3.dylib
 C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\runtimes\win7-x64\native\sqlite3.dll
 C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\bin\Debug\net5.0\runtimes\win7-x86\native\sqlite3.dll
+C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\staticwebassets\ManagementSystem.StaticWebAssets.Pack.cache
+C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\staticwebassets\msbuild.ManagementSystem.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\staticwebassets\msbuild.build.ManagementSystem.props
+C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\staticwebassets\msbuild.buildMultiTargeting.ManagementSystem.props
+C:\Users\Dalma\source\repos\Management System\managementsystem\ManagementSystem\ManagementSystem\obj\Debug\net5.0\staticwebassets\msbuild.buildTransitive.ManagementSystem.props
