@@ -7,19 +7,19 @@ namespace ManagementSystem.Entities
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int TaskId { get; set; }
         [Required]
         public string TaskName { get; set; }
         [Required] 
         public string TaskDescription { get;}
         [Required]
-        public string startDate { get; set; }
+        public string StartDate { get; set; }
         [Required]
-        public string endDate { get; set; }
+        public string EndDate { get; set; }
         [Required]
         public int? WorkerId { get; set; }
         [Required]
-        public int ClientId { get; set; }
+        public int? ClientId { get; set; }
 
     }
 }
