@@ -16,6 +16,9 @@ namespace ManagementSystem.Services
             CreateMap<UpdateAdvocateDTO, Advocate>();
             CreateMap<CreateCompanyDTO, Company>();
             CreateMap<UpdateCompanyDTO, Company>();
+            CreateMap<CreateTaskDTO, Tasks>();
+            CreateMap<UpdateTaskDTO, Tasks>();
+
         }
     }
 }
