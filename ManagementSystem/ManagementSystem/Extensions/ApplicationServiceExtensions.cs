@@ -17,7 +17,10 @@ namespace App1.Extensions
 
             services.AddDbContext<DataContext>(opt =>
             {
-                opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                // SQLITE
+                //opt.UseSqlite(config.GetConnectionString("DefaultConnection"));
+                //SQL SERVER
+                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<ITokenService, TokenService>();
           
