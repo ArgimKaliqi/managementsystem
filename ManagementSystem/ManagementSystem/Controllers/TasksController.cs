@@ -5,8 +5,11 @@ using ManagementSystem.DTOs;
 using ManagementSystem.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,15 +25,33 @@ namespace ManagementSystem.Controllers
             _mapper = mapper;
         }
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Tasks>>> GetTasks()
+        public async Task<ActionResult<List<TasksDto>>> GetTasks()
         {
-            return await _context.Tasks.ToListAsync();
+          var tasks =  await _context.Tasks.ToListAsync();
+           
+            
+            List<TasksDto> tasksDto = tasks.Select(x => new TasksDto() { 
+               
+                ClientId=x.ClientId,
+                StartDate=x.StartDate,
+                DueDate=x.DueDate,
+                TotalDays=(x.DueDate-x.StartDate).Days,
+                TaskDescription=x.TaskDescription,
+                TaskName=x.TaskName,
+                TaskId=x.TaskId,
+                WorkerId=x.WorkerId,
+                DaysLeft=(x.DueDate-DateTime.Now).Days
+                
+            }).ToList();
+            //tasksDto.ForEach(x => x.LimitedDayes = x.EndDate - x.StartDate);
+
+            return Ok(tasksDto);
         }
         [HttpGet("{id}", Name = "GetTasks")]
         public async Task<ActionResult<Tasks>> GetTask(int id)
         {
             var task = await _context.Tasks.FindAsync(id);
-            if(task==null)
+            if (task == null)
             {
                 return NotFound();
             }
@@ -52,15 +73,18 @@ namespace ManagementSystem.Controllers
             var task = await _context.Tasks.FindAsync(id);
             if (task == null) { return NotFound(); }
             _context.Tasks.Remove(task);
-            var result = await _context.SaveChangesAsync()>0;
+            var result = await _context.SaveChangesAsync() > 0;
             if (result) return Ok();
             return BadRequest(new ProblemDetails { Title = "Problem deleting the data" });
-            
+
+
         }
         [HttpPost]
-        public async Task<ActionResult<Tasks>>CreateTask(CreateTaskDTO taskDTO)
+        public async Task<ActionResult<Tasks>>CreateTask([FromForm]CreateTaskDTO taskDTO)
         {
+            
             var task = _mapper.Map<Tasks>(taskDTO);
+            task.TotalDays = (task.DueDate - task.StartDate).Days;
             _context.Tasks.Add(task);
             var result = await _context.SaveChangesAsync()>0;
             if (result) return CreatedAtRoute("GetTasks", new {Id = task.TaskId}, task);

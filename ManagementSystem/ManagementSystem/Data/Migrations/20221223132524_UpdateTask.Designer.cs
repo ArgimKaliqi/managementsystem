@@ -3,14 +3,16 @@ using System;
 using ManagementSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ManagementSystem.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20221223132524_UpdateTask")]
+    partial class UpdateTask
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -324,28 +326,15 @@ namespace ManagementSystem.Data.Migrations
                         .IsRequired()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DaysLeft")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("DueDate")
+                    b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("TaskDescription")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("TaskName")
                         .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("TaskStatus")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("TotalDays")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int?>("WorkerId")
                         .IsRequired()

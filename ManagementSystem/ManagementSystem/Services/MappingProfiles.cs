@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ManagementSystem.DTOs;
 using ManagementSystem.Entities;
+using System.Collections.Generic;
 
 namespace ManagementSystem.Services
 {
@@ -18,6 +19,8 @@ namespace ManagementSystem.Services
             CreateMap<UpdateCompanyDTO, Company>();
             CreateMap<CreateTaskDTO, Tasks>();
             CreateMap<UpdateTaskDTO, Tasks>();
+            CreateMap<TasksDto, Tasks>();
+            
 
         }
     }
