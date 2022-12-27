@@ -65,9 +65,8 @@ const AdvocateForm = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Advocates" subtitle="Fill in the advocates information" />
-      <KeyboardReturnOutlinedIcon />
       <Link to="/advocate" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Advocates Table</Button>
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}><KeyboardReturnOutlinedIcon />Advocates Table</Button>
       </Link>
 
       <Formik

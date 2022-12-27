@@ -65,9 +65,8 @@ const WorkerForm = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Worker" subtitle="Fill in the workers information" />
-      <KeyboardReturnOutlinedIcon />
       <Link to="/workers" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Workers Table</Button>
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}><KeyboardReturnOutlinedIcon /> Workers Table</Button>
       </Link>
 
       <Formik
