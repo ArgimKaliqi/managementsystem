@@ -196,7 +196,7 @@ const Item = ({ title, to, icon, selected, setSelected }) => {
               />
               <Item
                 title="Charts"
-                to="/charts"
+                to="/bar"
                 icon={<InsertChartOutlinedRoundedIcon />}
                 selected={selected}
                 setSelected={setSelected}

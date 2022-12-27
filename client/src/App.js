@@ -11,11 +11,12 @@ import Clients from './pages/clients'
 import Form from './pages/clients/clientForm'
 import Advocate from './pages/advocates'
 import AdvocateForm from './pages/advocates/advocateForm';
- import Workers from './pages/workers'
- import WorkerForm from './pages/workers/workerForm';
- import Companies from './pages/companies'
- import CompanyForm from './pages/companies/companyForm';
- import Schedule from './pages/calendar'
+import Workers from './pages/workers'
+import WorkerForm from './pages/workers/workerForm';
+import Companies from './pages/companies'
+import CompanyForm from './pages/companies/companyForm';
+import Schedule from './pages/calendar'
+import Bar from './pages/bar'
 // import Reports from './pages/reports'
 // import Borxhet from './pages/borxhet'
 // import Paushall from './pages/paushall'
@@ -53,6 +54,7 @@ function App() {
             <Route path='/workers' element={<Workers/>} /> 
             <Route path='/workerForm' element={<WorkerForm />} />
             <Route path='/schedule' element={<Schedule/>} />
+            <Route path='/bar' element={<Bar/>} />
           {/* <Route path='/reports' element={<Reports/>} /> */}
           {/* <Route path='/borxhet' element={<Borxhet/>} /> */}
           {/* <Route path='/paushall' element={<Paushall/>} /> */}

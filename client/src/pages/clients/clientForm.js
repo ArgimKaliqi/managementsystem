@@ -62,9 +62,8 @@ const Form = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Clients" subtitle="Fill in the clients information" />
-      <KeyboardReturnOutlinedIcon />
       <Link to="/clients" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Clients Table</Button>
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}><KeyboardReturnOutlinedIcon />Clients Table</Button>
       </Link>
 
       <Formik

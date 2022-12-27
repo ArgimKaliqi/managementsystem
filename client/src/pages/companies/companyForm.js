@@ -56,9 +56,8 @@ const CompanyForm = () => {
     <Box m="20px">
       <ToastContainer hideProgressBar={true} autoClose={2000}/>
       <Header title="Add Company" subtitle="Fill in the companies information" />
-      <KeyboardReturnOutlinedIcon />
       <Link to="/companies" style={{ textDecoration: 'none' }}>
-      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}>Companies Table</Button>
+      <Button variant="contained" sx={{ backgroundColor: colors.blueAccent[700], marginBottom: 2}}><KeyboardReturnOutlinedIcon /> Companies Table</Button>
       </Link>
 
       <Formik
